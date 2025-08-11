@@ -26,7 +26,7 @@
       "version": 53,
       "versionNonce": 1756246574,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1754805078357,
       "link": null,
       "locked": false,
@@ -45,8 +45,8 @@
       "type": "text",
       "x": 327,
       "y": 235,
-      "width": 1238.2393798828125,
-      "height": 525,
+      "width": 1302.0389404296875,
+      "height": 700,
       "angle": 0,
       "strokeColor": "#2f9e44",
       "backgroundColor": "transparent",
@@ -60,20 +60,954 @@
       "index": "a1",
       "roundness": null,
       "seed": 1589185330,
-      "version": 1235,
-      "versionNonce": 1275053166,
+      "version": 1725,
+      "versionNonce": 1940252299,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1754807380301,
+      "boundElements": [],
+      "updated": 1754842163173,
       "link": null,
       "locked": false,
-      "text": "Types of Errors\n- 1. Logic Errors -> do wrong things -> most dangerous errors (sneaky ones -> not easily detectable)\n        - misunderstanding requirements\n        - implement algorithm incorrectly\n        - don't think about edge cases.\n- 2. Databse Errors -> simple like connection errors -> complex like deadlocks, transcation related.\n        - connection errors\n        - constraints violation\n- 3. Query errors - type or complex like joins which timeout or due to circuler dependency.\n- 4. External service errors -> clerk\n    - Network\n        - connection timeouts\n        - dns failures\n        - network partitions\n    - Authentication errors\n    - rate limiting - external services apply this as 249 TOO_MANY_REQUESTS and we need to handle this\n                    by some mechanism like populer one Exponential Backoff where it waits for some time and again send\n                    external req. and still 249 then wait for double amout of time if still 249 then wait for thrice amount of time\n                    and send req until its get done.\n    - service outage -> unavoidable error\n            for this, implement fallback -> Redis outage -> fallback to in-memory or second redis.",
+      "text": "Types of Errors\n- 1. Logic Errors -> do wrong things -> most dangerous errors (sneaky ones -> not easily detectable)\n        - misunderstanding requirements\n        - implement algorithm incorrectly\n        - don't think about edge cases.\n- 2. Databse Errors -> simple like connection errors -> complex like deadlocks, transcation related.\n        - connection errors\n        - constraints violation\n- 3. Query errors - type or complex like joins which timeout or due to circuler dependency.\n- 4. External service errors -> clerk\n    - Network\n        - connection timeouts\n        - dns failures\n        - network partitions\n    - Authentication errors\n    - rate limiting - external services apply this as 249 TOO_MANY_REQUESTS and we need to handle this\n                    by some mechanism like populer one Exponential Backoff where it waits for some time and again send\n                    external req. and still 249 then wait for double amout of time if still 249 then wait for thrice amount of time\n                    and send req until its get done.\n    - service outage -> unavoidable error\n            for this, implement fallback -> Redis outage -> fallback to in-memory or second redis.\n- 5. Input validation errors -> 400 BAD_REQUEST\n    - Format errors\n    - Range based errors -> example the cart must have atleast three items.\n    - Required Field Validation\n- 6. Configuration errors\n    - Validate the all configuration first before the service actually start rather at runtime when users start to use as it dangerous.\n        This way it crash first if any configuration errors incountered. ",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Types of Errors\n- 1. Logic Errors -> do wrong things -> most dangerous errors (sneaky ones -> not easily detectable)\n        - misunderstanding requirements\n        - implement algorithm incorrectly\n        - don't think about edge cases.\n- 2. Databse Errors -> simple like connection errors -> complex like deadlocks, transcation related.\n        - connection errors\n        - constraints violation\n- 3. Query errors - type or complex like joins which timeout or due to circuler dependency.\n- 4. External service errors -> clerk\n    - Network\n        - connection timeouts\n        - dns failures\n        - network partitions\n    - Authentication errors\n    - rate limiting - external services apply this as 249 TOO_MANY_REQUESTS and we need to handle this\n                    by some mechanism like populer one Exponential Backoff where it waits for some time and again send\n                    external req. and still 249 then wait for double amout of time if still 249 then wait for thrice amount of time\n                    and send req until its get done.\n    - service outage -> unavoidable error\n            for this, implement fallback -> Redis outage -> fallback to in-memory or second redis.",
+      "originalText": "Types of Errors\n- 1. Logic Errors -> do wrong things -> most dangerous errors (sneaky ones -> not easily detectable)\n        - misunderstanding requirements\n        - implement algorithm incorrectly\n        - don't think about edge cases.\n- 2. Databse Errors -> simple like connection errors -> complex like deadlocks, transcation related.\n        - connection errors\n        - constraints violation\n- 3. Query errors - type or complex like joins which timeout or due to circuler dependency.\n- 4. External service errors -> clerk\n    - Network\n        - connection timeouts\n        - dns failures\n        - network partitions\n    - Authentication errors\n    - rate limiting - external services apply this as 249 TOO_MANY_REQUESTS and we need to handle this\n                    by some mechanism like populer one Exponential Backoff where it waits for some time and again send\n                    external req. and still 249 then wait for double amout of time if still 249 then wait for thrice amount of time\n                    and send req until its get done.\n    - service outage -> unavoidable error\n            for this, implement fallback -> Redis outage -> fallback to in-memory or second redis.\n- 5. Input validation errors -> 400 BAD_REQUEST\n    - Format errors\n    - Range based errors -> example the cart must have atleast three items.\n    - Required Field Validation\n- 6. Configuration errors\n    - Validate the all configuration first before the service actually start rather at runtime when users start to use as it dangerous.\n        This way it crash first if any configuration errors incountered. ",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "cM0r9XK8-OK_Kf_XfAvKI",
+      "type": "text",
+      "x": 1695.269193941506,
+      "y": 257.2458659326845,
+      "width": 952.3994140625,
+      "height": 275,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a3",
+      "roundness": null,
+      "seed": 71328037,
+      "version": 790,
+      "versionNonce": 2032109797,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754842842923,
+      "link": null,
+      "locked": false,
+      "text": "Best advices:\n    - Find errors before they spread.\n    - Best error handling starts before error happens\n    - /health or /status -> 200 OK services are running\n    - database health check not by just pinging but also running a query so that \n        to get the time it takes like if for 500ms query taking 4-5s they send alert of db status.\n    - External services -> for them also put health status\n            - Email -> put sample email checks for test email address\n            - Transaction -> put test transaction stating health status\n            - Authentication -> generate test tokens\n    - Core functionality -> configuration properly loaded first, default caches populated",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Best advices:\n    - Find errors before they spread.\n    - Best error handling starts before error happens\n    - /health or /status -> 200 OK services are running\n    - database health check not by just pinging but also running a query so that \n        to get the time it takes like if for 500ms query taking 4-5s they send alert of db status.\n    - External services -> for them also put health status\n            - Email -> put sample email checks for test email address\n            - Transaction -> put test transaction stating health status\n            - Authentication -> generate test tokens\n    - Core functionality -> configuration properly loaded first, default caches populated",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "IKSNTjoyoGusBRrSnbPjE",
+      "type": "freedraw",
+      "x": 2622.193854638733,
+      "y": 347.27092290687574,
+      "width": 74.1873154694722,
+      "height": 181.71724463308954,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a5",
+      "roundness": null,
+      "seed": 2102868651,
+      "version": 170,
+      "versionNonce": 369484235,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754842878462,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2.5006960270607124,
+          0
+        ],
+        [
+          4.167826711767702,
+          0
+        ],
+        [
+          5.834957396475147,
+          0
+        ],
+        [
+          8.33565342353586,
+          0
+        ],
+        [
+          9.169218765889582,
+          0
+        ],
+        [
+          10.836349450596572,
+          0
+        ],
+        [
+          12.503480135304017,
+          0
+        ],
+        [
+          15.004176162365184,
+          0
+        ],
+        [
+          15.837741504718451,
+          0
+        ],
+        [
+          18.338437531779164,
+          0
+        ],
+        [
+          20.83913355884033,
+          0
+        ],
+        [
+          24.173394928254766,
+          0
+        ],
+        [
+          31.675483009437357,
+          0.8335653423536087
+        ],
+        [
+          33.34261369414435,
+          0.8335653423536087
+        ],
+        [
+          34.17617903649807,
+          0.8335653423536087
+        ],
+        [
+          35.00974437885179,
+          0.8335653423536087
+        ],
+        [
+          38.34400574826668,
+          1.6671306847072174
+        ],
+        [
+          41.67826711768066,
+          3.3342613694144347
+        ],
+        [
+          42.511832460034384,
+          5.001392054121766
+        ],
+        [
+          45.84609382944927,
+          5.8349573964753745
+        ],
+        [
+          47.51322451415626,
+          6.668522738828983
+        ],
+        [
+          50.013920541216976,
+          7.502088081182592
+        ],
+        [
+          51.68105122592442,
+          8.3356534235362
+        ],
+        [
+          54.18174725298513,
+          9.16921876588981
+        ],
+        [
+          55.84887793769212,
+          10.002784108243418
+        ],
+        [
+          56.682443280045845,
+          11.669914792950635
+        ],
+        [
+          59.18313930710701,
+          13.337045477657966
+        ],
+        [
+          60.016704649460735,
+          14.170610820011575
+        ],
+        [
+          60.85026999181446,
+          16.6713068470724
+        ],
+        [
+          61.683835334167725,
+          18.33843753177962
+        ],
+        [
+          62.51740067652145,
+          19.172002874133227
+        ],
+        [
+          64.18453136122844,
+          21.672698901194167
+        ],
+        [
+          64.18453136122844,
+          22.506264243547776
+        ],
+        [
+          65.85166204593588,
+          23.339829585901384
+        ],
+        [
+          66.6852273882896,
+          25.84052561296221
+        ],
+        [
+          66.6852273882896,
+          26.674090955315933
+        ],
+        [
+          67.51879273064333,
+          27.50765629766954
+        ],
+        [
+          67.51879273064333,
+          30.008352324730367
+        ],
+        [
+          67.51879273064333,
+          30.841917667083976
+        ],
+        [
+          67.51879273064333,
+          34.176179036498525
+        ],
+        [
+          67.51879273064333,
+          35.00974437885213
+        ],
+        [
+          67.51879273064333,
+          36.67687506355935
+        ],
+        [
+          67.51879273064333,
+          39.17757109062018
+        ],
+        [
+          67.51879273064333,
+          40.84470177532751
+        ],
+        [
+          67.51879273064333,
+          43.345397802388334
+        ],
+        [
+          67.51879273064333,
+          44.17896314474194
+        ],
+        [
+          67.51879273064333,
+          47.51322451415649
+        ],
+        [
+          67.51879273064333,
+          48.3467898565101
+        ],
+        [
+          67.51879273064333,
+          50.01392054121732
+        ],
+        [
+          67.51879273064333,
+          53.34818191063175
+        ],
+        [
+          67.51879273064333,
+          54.181747252985474
+        ],
+        [
+          67.51879273064333,
+          55.01531259533908
+        ],
+        [
+          67.51879273064333,
+          55.84887793769269
+        ],
+        [
+          65.01809670358216,
+          57.51600862239991
+        ],
+        [
+          64.18453136122844,
+          58.34957396475352
+        ],
+        [
+          62.51740067652145,
+          60.016704649460735
+        ],
+        [
+          61.683835334167725,
+          60.85026999181446
+        ],
+        [
+          60.85026999181446,
+          61.683835334168066
+        ],
+        [
+          59.18313930710701,
+          63.35096601887528
+        ],
+        [
+          57.51600862239957,
+          65.0180967035825
+        ],
+        [
+          56.682443280045845,
+          67.51879273064333
+        ],
+        [
+          55.84887793769212,
+          69.18592341535066
+        ],
+        [
+          55.015312595338855,
+          70.85305410005788
+        ],
+        [
+          54.18174725298513,
+          75.02088081182592
+        ],
+        [
+          53.348181910631865,
+          78.35514218124047
+        ],
+        [
+          52.51461656827814,
+          80.8558382083013
+        ],
+        [
+          52.51461656827814,
+          83.35653423536223
+        ],
+        [
+          52.51461656827814,
+          86.69079560477667
+        ],
+        [
+          52.51461656827814,
+          88.35792628948388
+        ],
+        [
+          52.51461656827814,
+          91.69218765889843
+        ],
+        [
+          52.51461656827814,
+          92.52575300125204
+        ],
+        [
+          52.51461656827814,
+          95.02644902831287
+        ],
+        [
+          52.51461656827814,
+          95.86001437066648
+        ],
+        [
+          53.348181910631865,
+          96.69357971302009
+        ],
+        [
+          54.18174725298513,
+          98.36071039772742
+        ],
+        [
+          55.015312595338855,
+          98.36071039772742
+        ],
+        [
+          55.84887793769212,
+          98.36071039772742
+        ],
+        [
+          56.682443280045845,
+          98.36071039772742
+        ],
+        [
+          58.34957396475329,
+          98.36071039772742
+        ],
+        [
+          60.016704649460735,
+          98.36071039772742
+        ],
+        [
+          60.85026999181446,
+          98.36071039772742
+        ],
+        [
+          61.683835334167725,
+          98.36071039772742
+        ],
+        [
+          63.350966018874715,
+          97.52714505537381
+        ],
+        [
+          64.18453136122844,
+          97.52714505537381
+        ],
+        [
+          65.85166204593588,
+          97.52714505537381
+        ],
+        [
+          67.51879273064333,
+          96.69357971302009
+        ],
+        [
+          68.35235807299705,
+          95.86001437066648
+        ],
+        [
+          69.18592341535032,
+          95.02644902831287
+        ],
+        [
+          70.01948875770404,
+          95.02644902831287
+        ],
+        [
+          70.8530541000573,
+          93.35931834360565
+        ],
+        [
+          72.52018478476475,
+          93.35931834360565
+        ],
+        [
+          73.35375012711847,
+          92.52575300125204
+        ],
+        [
+          74.1873154694722,
+          92.52575300125204
+        ],
+        [
+          74.1873154694722,
+          90.85862231654482
+        ],
+        [
+          74.1873154694722,
+          91.69218765889843
+        ],
+        [
+          74.1873154694722,
+          92.52575300125204
+        ],
+        [
+          74.1873154694722,
+          93.35931834360565
+        ],
+        [
+          73.35375012711847,
+          94.19288368595926
+        ],
+        [
+          71.68661944241103,
+          94.19288368595926
+        ],
+        [
+          70.8530541000573,
+          95.02644902831287
+        ],
+        [
+          70.01948875770404,
+          95.86001437066648
+        ],
+        [
+          68.35235807299705,
+          95.86001437066648
+        ],
+        [
+          68.35235807299705,
+          96.69357971302009
+        ],
+        [
+          67.51879273064333,
+          98.36071039772742
+        ],
+        [
+          65.01809670358216,
+          99.19427574008103
+        ],
+        [
+          64.18453136122844,
+          100.02784108243463
+        ],
+        [
+          62.51740067652145,
+          100.86140642478824
+        ],
+        [
+          61.683835334167725,
+          101.69497176714185
+        ],
+        [
+          60.85026999181446,
+          102.52853710949546
+        ],
+        [
+          60.016704649460735,
+          103.36210245184907
+        ],
+        [
+          59.18313930710701,
+          105.0292331365564
+        ],
+        [
+          59.18313930710701,
+          105.86279847891001
+        ],
+        [
+          57.51600862239957,
+          108.36349450597083
+        ],
+        [
+          56.682443280045845,
+          110.86419053303166
+        ],
+        [
+          56.682443280045845,
+          113.3648865600926
+        ],
+        [
+          56.682443280045845,
+          115.86558258715343
+        ],
+        [
+          56.682443280045845,
+          118.36627861421437
+        ],
+        [
+          56.682443280045845,
+          123.36767066833602
+        ],
+        [
+          56.682443280045845,
+          126.70193203775057
+        ],
+        [
+          57.51600862239957,
+          131.70332409187222
+        ],
+        [
+          59.18313930710701,
+          135.03758546128677
+        ],
+        [
+          59.18313930710701,
+          138.3718468307012
+        ],
+        [
+          59.18313930710701,
+          141.70610820011575
+        ],
+        [
+          59.18313930710701,
+          142.53967354246936
+        ],
+        [
+          59.18313930710701,
+          144.20680422717658
+        ],
+        [
+          59.18313930710701,
+          145.04036956953018
+        ],
+        [
+          59.18313930710701,
+          146.7075002542374
+        ],
+        [
+          60.016704649460735,
+          148.37463093894473
+        ],
+        [
+          60.016704649460735,
+          149.20819628129834
+        ],
+        [
+          60.016704649460735,
+          150.87532696600556
+        ],
+        [
+          60.016704649460735,
+          151.70889230835917
+        ],
+        [
+          60.016704649460735,
+          154.20958833542
+        ],
+        [
+          60.016704649460735,
+          155.04315367777372
+        ],
+        [
+          60.016704649460735,
+          156.71028436248093
+        ],
+        [
+          60.016704649460735,
+          158.37741504718815
+        ],
+        [
+          60.016704649460735,
+          160.87811107424898
+        ],
+        [
+          58.34957396475329,
+          161.7116764166027
+        ],
+        [
+          57.51600862239957,
+          165.04593778601713
+        ],
+        [
+          56.682443280045845,
+          166.71306847072435
+        ],
+        [
+          55.84887793769212,
+          169.2137644977853
+        ],
+        [
+          55.015312595338855,
+          170.0473298401389
+        ],
+        [
+          54.18174725298513,
+          173.38159120955333
+        ],
+        [
+          53.348181910631865,
+          174.21515655190694
+        ],
+        [
+          51.68105122592442,
+          174.21515655190694
+        ],
+        [
+          50.8474858835707,
+          175.88228723661416
+        ],
+        [
+          50.013920541216976,
+          175.88228723661416
+        ],
+        [
+          48.34678985650953,
+          175.88228723661416
+        ],
+        [
+          47.51322451415626,
+          175.88228723661416
+        ],
+        [
+          45.01252848709555,
+          176.71585257896788
+        ],
+        [
+          42.511832460034384,
+          176.71585257896788
+        ],
+        [
+          41.67826711768066,
+          177.5494179213215
+        ],
+        [
+          37.51044040591296,
+          177.5494179213215
+        ],
+        [
+          35.843309721205515,
+          178.3829832636751
+        ],
+        [
+          33.34261369414435,
+          178.3829832636751
+        ],
+        [
+          30.008352324730367,
+          178.3829832636751
+        ],
+        [
+          25.840525612961756,
+          179.2165486060287
+        ],
+        [
+          24.173394928254766,
+          180.88367929073593
+        ],
+        [
+          20.83913355884033,
+          181.71724463308954
+        ],
+        [
+          19.172002874132886,
+          181.71724463308954
+        ],
+        [
+          15.837741504718451,
+          181.71724463308954
+        ],
+        [
+          13.337045477657739,
+          181.71724463308954
+        ],
+        [
+          10.836349450596572,
+          181.71724463308954
+        ],
+        [
+          10.002784108243304,
+          181.71724463308954
+        ],
+        [
+          9.169218765889582,
+          181.71724463308954
+        ],
+        [
+          6.6685227388288695,
+          181.71724463308954
+        ],
+        [
+          5.834957396475147,
+          181.71724463308954
+        ],
+        [
+          5.001392054121425,
+          181.71724463308954
+        ],
+        [
+          5.001392054121425,
+          181.71724463308954
+        ]
+      ],
+      "pressures": [],
+      "simulatePressure": true,
+      "lastCommittedPoint": [
+        5.001392054121425,
+        181.71724463308954
+      ]
+    },
+    {
+      "id": "8On-SE_aKbX-k1I8OPb2A",
+      "type": "text",
+      "x": 2733.058045171764,
+      "y": 434.795283854006,
+      "width": 148.639892578125,
+      "height": 50,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a7",
+      "roundness": null,
+      "seed": 525587781,
+      "version": 29,
+      "versionNonce": 1841053451,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754842897705,
+      "link": null,
+      "locked": false,
+      "text": "Proactive\nerror detection",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Proactive\nerror detection",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "TCgkgjWmBbys5uQxhKLLU",
+      "type": "text",
+      "x": 1760.2872906450875,
+      "y": 614.8453978023883,
+      "width": 265.3797912597656,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a8",
+      "roundness": null,
+      "seed": 2013036869,
+      "version": 30,
+      "versionNonce": 116731205,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754842985510,
+      "link": null,
+      "locked": false,
+      "text": "Monitoring & Observalibility",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Monitoring & Observalibility",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "4_9U2qn66lAynDsiXd9Lr",
+      "type": "text",
+      "x": 1738.6145917438935,
+      "y": 674.0285371094955,
+      "width": 1885.558837890625,
+      "height": 225,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a9",
+      "roundness": null,
+      "seed": 453252965,
+      "version": 1251,
+      "versionNonce": 692544581,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754846144021,
+      "link": null,
+      "locked": false,
+      "text": "Handling Errors gracefully\n    - 1. Sending Immediate error response -> it shows if no delay then small error, if big diff then major error,\n        not to overwelm olready stress backend, handle errors with larger time taking like email sending, use exponential backoffs, retry mechanisms quit work well,\n        but their logic should not add stress to already stress server bucause the server always under stress.\n    - 2. For non-recoverable errors -> `Contentment & Graceful degradations` in this we use fallbacks, like switching to cached data, providing alternative functionality.\n    - 3. Error Recovery strategies -> manual recovery pretty much necessary, but try different methods also with automation. document for team members so they know what\n            to do in such situations.\n    - 4. Error propagation control -> catching the errors in lower level and then defining those errors clearly for going upper level by defining all other information after identifing the error type.\n    - 5. Global error handling -> final safety net. -> More robust & secure, reduce reduncency, think about all errors that can occur in whole backend.",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Handling Errors gracefully\n    - 1. Sending Immediate error response -> it shows if no delay then small error, if big diff then major error,\n        not to overwelm olready stress backend, handle errors with larger time taking like email sending, use exponential backoffs, retry mechanisms quit work well,\n        but their logic should not add stress to already stress server bucause the server always under stress.\n    - 2. For non-recoverable errors -> `Contentment & Graceful degradations` in this we use fallbacks, like switching to cached data, providing alternative functionality.\n    - 3. Error Recovery strategies -> manual recovery pretty much necessary, but try different methods also with automation. document for team members so they know what\n            to do in such situations.\n    - 4. Error propagation control -> catching the errors in lower level and then defining those errors clearly for going upper level by defining all other information after identifing the error type.\n    - 5. Global error handling -> final safety net. -> More robust & secure, reduce reduncency, think about all errors that can occur in whole backend.",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "at0vY4WhRekHg4V3YCDNA",
+      "type": "text",
+      "x": 1837.97530214162,
+      "y": 959.9414495367877,
+      "width": 1052.899169921875,
+      "height": 75,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aA",
+      "roundness": null,
+      "seed": 1433835115,
+      "version": 173,
+      "versionNonce": 899632069,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754846561174,
+      "link": null,
+      "locked": false,
+      "text": "Security\n    -Use `Something went wrong` or `Internal Server error` for security purpose when error not recognised\n    - https://cheatsheetseries.owasp.org/ -> for security practices",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Security\n    -Use `Something went wrong` or `Internal Server error` for security purpose when error not recognised\n    - https://cheatsheetseries.owasp.org/ -> for security practices",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "gaJu7cB4bfUi2Dkg85uuc",
+      "type": "text",
+      "x": 1876.986438574594,
+      "y": 1064.970682673344,
+      "width": 1788.8387451171875,
+      "height": 50,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aB",
+      "roundness": null,
+      "seed": 511620843,
+      "version": 225,
+      "versionNonce": 932758251,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1754846773527,
+      "link": null,
+      "locked": false,
+      "text": "Logs -> not to log users email, instead log user id as companies uses other external logger services for better organizing it and from where chances of leaking data happens, so not lo\n        log important data.",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Logs -> not to log users email, instead log user id as companies uses other external logger services for better organizing it and from where chances of leaking data happens, so not lo\n        log important data.",
       "autoResize": true,
       "lineHeight": 1.25
     }
