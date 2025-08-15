@@ -19,6 +19,12 @@ public:
     this->data = data;
     this->next = NULL;
   }
+
+  // not necessary to write this dtor
+  ~Node()
+  {
+    cout << "Destructor is called to delete node " << this->data << endl;
+  }
 };
 
 void printLL(Node *head)
@@ -155,6 +161,76 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int position)
   }
 }
 
+void deleteNode(Node *&head, Node *&tail, int position)
+{
+  // empty ll
+  if (head == NULL)
+  {
+    cout << "Cannot delete, because LL is empty" << endl;
+    return;
+  }
+
+  // single element
+  if (head == tail)
+  {
+    Node *temp = head;
+    delete temp;
+    head = NULL;
+    tail = NULL;
+    return;
+  }
+
+  int len = getLLLength(head);
+
+  // delete from head
+  if (position == 1)
+  {
+    // Step 1-> new temp ptr on head -> to not lost track
+    Node *temp = head;
+    // Step 2-> move head to head->next
+    head = head->next;
+    // Step 3-> point temp to null
+    temp->next = NULL;
+    // Step 4-> destroy temp node -> necessary to delete  manually the dynamically allocated memory
+    delete temp;
+  }
+  else if (position == len)
+  {
+    // delete from tail
+    // Step 1-> traverse prev to until prev->next == tail
+    Node *prev = head;
+    while (prev->next != tail)
+    {
+      prev = prev->next;
+    }
+    // Step 2-> point prev to null
+    prev->next = NULL;
+    // Step 3-> delete tail
+    delete tail;
+    // Step 4-> point tail to prev
+    tail = prev;
+  }
+  else
+  {
+    // position inbetween 1 and len
+    // Step 1-> traverse prev & curr to reach given position
+    Node *prev = NULL;
+    Node *curr = head;
+    while (position != 1)
+    {
+      prev = curr;
+      curr = curr->next;
+      position--;
+    }
+    // Step 2-> point prev->next to curr->next
+    prev->next = curr->next;
+    // Step 3-> point curr to null
+    curr->next = NULL;
+    // Step 4-> delete curr
+    delete curr;
+  }
+}
+
 int main()
 {
 
@@ -204,14 +280,19 @@ int main()
   insertAtTail(head, tail, 10);
   insertAtTail(head, tail, 20);
   insertAtTail(head, tail, 30);
+  insertAtTail(head, tail, 40);
   insertAtTail(head, tail, 50);
   printLL(head);
 
   // insertAtPosition(head, tail, 500, 0);
   // insertAtPosition(head, tail, 500, getLLLength(head) + 1);
-  // insertAtPosition(head, tail, 500, 1);
-  insertAtPosition(head, tail, 500, getLLLength(head));
-  insertAtPosition(head, tail, 1000, 2);
+  // // insertAtPosition(head, tail, 500, 1);
+  // insertAtPosition(head, tail, 500, getLLLength(head));
+  // insertAtPosition(head, tail, 1000, 2);
+
+  // deleteNode(head, tail, 1);
+  // deleteNode(head, tail, getLLLength(head));
+  deleteNode(head, tail, 3);
   printLL(head);
 
   return 0;
