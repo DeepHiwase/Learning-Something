@@ -109,29 +109,88 @@ void interLeaveQueue(queue<int> &first)
   }
 }
 
+void printFirstNegative(int *arr, int n, int k)
+{
+  deque<int> dq;
+
+  // process first k element - first window
+  for (int index = 0; index < k; index++)
+  {
+    int element = arr[index];
+    if (element <= 0)
+    {
+      // -ve
+      dq.push_back(index);
+    }
+  }
+
+  // process remaining windows - removal & addition
+  for (int index = k; index < n; index++)
+  {
+    // aage badhne se pahile purani window ka answer nikalo
+    if (dq.empty())
+    {
+      cout << "0" << endl;
+    }
+    else
+    {
+      cout << arr[dq.front()] << " ";
+    }
+
+    // removal - jo bhi index out of range hai, usko queue se bahar nikal do
+    // while or if
+    if (index - dq.front() >= k)
+    {
+      dq.pop_front();
+    }
+
+    // addition
+    if (arr[index] < 0)
+    {
+      // -ve elements index push in deque
+      dq.push_back(index);
+    }
+  }
+
+  // last window answer print alag se
+  if (dq.empty())
+  {
+    cout << "0" << endl;
+  }
+  else
+  {
+    cout << arr[dq.front()] << " ";
+  }
+}
+
 int main()
 {
-  queue<int> q;
-  q.push(10);
-  q.push(20);
-  q.push(30);
-  q.push(40);
-  q.push(50);
-  q.push(60);
+  // queue<int> q;
+  // q.push(10);
+  // q.push(20);
+  // q.push(30);
+  // q.push(40);
+  // q.push(50);
+  // q.push(60);
 
-  // reverseQueue(q);
-  // reverseUsingRecurrsion(q);
-  // reverseFirstK(q, 2);
-  interLeaveQueue(q);
+  // // reverseQueue(q);
+  // // reverseUsingRecurrsion(q);
+  // // reverseFirstK(q, 2);
+  // interLeaveQueue(q);
 
-  cout << "Printing queue: " << endl;
-  while (!q.empty())
-  {
-    int element = q.front();
-    q.pop();
-    cout << element << " ";
-  }
-  cout << endl;
+  // cout << "Printing queue: " << endl;
+  // while (!q.empty())
+  // {
+  //   int element = q.front();
+  //   q.pop();
+  //   cout << element << " ";
+  // }
+  // cout << endl;
+
+  int arr[] = {2, -5, 4, -1, -2, 0, 5};
+  int size = 7;
+  int k = 3;
+  printFirstNegative(arr, size, k);
 
   return 0;
 }
