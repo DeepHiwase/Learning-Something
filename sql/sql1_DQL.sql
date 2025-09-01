@@ -218,3 +218,49 @@ SELECT TOP 2
   *
 FROM orders
 ORDER BY order_date DESC;
+
+-- Execution order VS Coding order
+
+-- Coding Order
+SELECT DISTINCT TOP 2
+  Col1,
+  Col2
+FROM table1
+WHERE Col1 = 10
+GROUP BY Col1
+HAVING SUM(Col2) > 30
+ORDER BY Col2 ASC;
+
+-- Execution order
+1. FROM
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. SELECT DISTINCT
+6. ORDER BY
+7. TOP
+
+-- Multi-queries
+-- in single query file if execute both, the result will show two or more windows depending on no. of select queries
+SELECT *
+FROM customers;
+
+SELECT *
+FROM orders;
+
+-- Static (fixed) values - just for us to show a static value in the row
+SELECT 123
+
+SELECT 123 AS static_number;
+
+SELECT 'Hello' AS static_number;
+
+SELECT
+  id,
+  first_name
+  'New Customer' AS customer_type
+From customers;
+
+-- Highlight & execute
+-- in sql editor -> can highlight and execute some part of query  - helpful to reduce writing more queries - also help to run seperate
+-- queries from multi-query file 
