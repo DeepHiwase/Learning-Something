@@ -1,0 +1,13 @@
+{
+  "name": "03_readline_pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "r1_01.js",
+  "scripts": {
+    "dev": "node r1_01.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
