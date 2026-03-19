@@ -1,0 +1,48 @@
+// Root Styles
+$background-primary: teal;
+$secondary-color: lightblue;
+
+.card {
+  background-color: $background-primary;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button {
+    margin-top: 10px;
+    background-color: $secondary-color;
+  }
+}
+
+@mixin flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-div {
+  @include flex-container;
+  width: 100%;
+}
+
+
+// @for $i from 1 through 3 { /*-> 1, 2*/
+//   .m-#{$i} {
+//     margin: #{$i * 4}px;
+//   }
+// }
+
+@for $i from 1 through 3 { /*-> 1, 2, 3*/
+  .m-#{$i} {
+    margin: #{$i * 4}px;
+  }
+}

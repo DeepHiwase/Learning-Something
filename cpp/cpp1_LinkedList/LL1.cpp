@@ -231,6 +231,137 @@ void deleteNode(Node *&head, Node *&tail, int position)
   }
 }
 
+bool checkLoop(Node *head)
+{
+  // using slow-fast ptr algo
+  Node *slow = head;
+  Node *fast = head;
+
+  while (fast != NULL)
+  {
+    fast = fast->next;
+    if (fast != NULL)
+    {
+      fast = fast->next;
+      slow = slow->next;
+    }
+    if (fast == slow)
+    {
+      // loop present
+      return true;
+    }
+  }
+  return false;
+}
+
+Node *getStartingPointOfLoopInLL(Node *head)
+{
+  Node *slow = head;
+  Node *fast = head;
+
+  while (fast != NULL)
+  {
+    fast = fast->next;
+    if (fast != NULL)
+    {
+      fast = fast->next;
+      slow = slow->next;
+    }
+
+    // loop present
+    if (slow == fast)
+    {
+      break;
+    }
+  }
+
+  // algo step 1-> put slow on head
+  slow = head;
+  // algo step 2-> move now fast & slow both by 1 step until they meet
+  while (fast != slow)
+  {
+    fast = fast->next;
+    slow = slow->next;
+  }
+  // they meet, return any one of them as it will be the starting point of loop in LL according to algo
+  return slow;
+}
+
+void removeLoop(Node *head)
+{
+  Node *startingPointOfLoopLL = getStartingPointOfLoopInLL(head);
+
+  // start a loop to iterate in loop present in ll and run until temp-> next == startingPoin
+  Node *temp = startingPointOfLoopLL;
+  while (temp->next != startingPointOfLoopLL)
+  {
+    temp = temp->next;
+  }
+  // break loop
+  temp->next = NULL;
+}
+
+Node *reverseLL(Node *&head)
+{
+  Node *prev = NULL;
+  Node *curr = head;
+  while (curr != NULL)
+  {
+    Node *nextNode = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = nextNode;
+  }
+  head = prev;
+
+  return head;
+}
+
+void addOne(Node *&head)
+{
+  // step 1-> reverse ll
+  head = reverseLL(head);
+
+  // step 2-> add one
+  int carry = 1;
+  Node *temp = head;
+  while (temp->next != NULL)
+  {
+    int totalSum = temp->data + carry;
+    int digit = totalSum % 10;
+    carry = totalSum / 10;
+
+    temp->data = digit;
+    temp = temp->next;
+
+    if (carry == 0)
+    {
+      break;
+    }
+  }
+  // precess the last node
+  if (carry != 0)
+  {
+    int totalSum = temp->data + carry;
+    int digit = totalSum % 10;
+    carry = totalSum / 10;
+
+    temp->data = digit;
+    if (carry != 0)
+    {
+      Node *newNode = new Node(carry);
+      temp->next = newNode;
+    }
+  }
+
+  // step 3-> reverse ll
+  head = reverseLL(head);
+}
+
+Node * reverseInKGroup(Node * &head, int k) {
+ 
+}
+
 int main()
 {
 
@@ -274,15 +405,15 @@ int main()
   // printLL(head);
   // cout << "Length of LL: " << getLLLength(head) << endl;
 
-  Node *head = NULL;
-  Node *tail = NULL;
+  // Node *head = NULL;
+  // Node *tail = NULL;
 
-  insertAtTail(head, tail, 10);
-  insertAtTail(head, tail, 20);
-  insertAtTail(head, tail, 30);
-  insertAtTail(head, tail, 40);
-  insertAtTail(head, tail, 50);
-  printLL(head);
+  // insertAtTail(head, tail, 10);
+  // insertAtTail(head, tail, 20);
+  // insertAtTail(head, tail, 30);
+  // insertAtTail(head, tail, 40);
+  // insertAtTail(head, tail, 50);
+  // printLL(head);
 
   // insertAtPosition(head, tail, 500, 0);
   // insertAtPosition(head, tail, 500, getLLLength(head) + 1);
@@ -292,7 +423,18 @@ int main()
 
   // deleteNode(head, tail, 1);
   // deleteNode(head, tail, getLLLength(head));
-  deleteNode(head, tail, 3);
+  // deleteNode(head, tail, 3);
+  // printLL(head);
+
+  Node *head = NULL;
+  Node *tail = NULL;
+
+  insertAtTail(head, tail, 1);
+  insertAtTail(head, tail, 9);
+  insertAtTail(head, tail, 9);
+  printLL(head);
+
+  addOne(head);
   printLL(head);
 
   return 0;

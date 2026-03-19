@@ -1,0 +1,62 @@
+/* CSS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 2px dotted fuchsia;
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+  border: 2px solid black;
+  flex-wrap: wrap;
+
+  gap: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.child {
+  padding: 4px;
+  width: 80px;
+  text-align: center;
+  color: rgb(105, 207, 96);
+  font-size: 30px;
+}
+
+.odd {
+  border: 2px solid aqua;
+  border-radius: 4px;
+  background-color: rgb(222, 53, 53);
+}
+
+.even {
+  border: 2px solid teal;
+  border-radius: 4px;
+  border-style: dashed;
+  background-color: rgb(152, 99, 202);
+}
+
+#one {
+  flex-grow: 1;
+}
+
+#two {
+  flex-grow: 2;
+}
+
+#three {
+  flex-grow: 1;
+}
+
+#three {
+  flex-grow: 1;
+}
+#three {
+  flex-grow: 1;
+}

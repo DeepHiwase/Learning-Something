@@ -1,0 +1,192 @@
+:root {
+  --text-color-primary: #f8f9fa;
+  --text-color-secondary: #6c757d;
+  --color-yellow: #fd7e14;
+}
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--text-color-primary);
+}
+
+nav {
+  padding: 16px;
+
+  height: 78px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 26px;
+  padding-top: 6px;
+  padding-left: 4px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 680px;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.login-btn {
+  color: var(--color-yellow);
+}
+
+.register-btn {
+  padding: 10px 20px;
+  color: var(--text-color-primary);
+  background-color: var(--color-yellow);
+  border-radius: 4px;
+}
+
+.hero {
+  background-image: url(./assets/hero.jpg);
+  background-color: rgba(41, 41, 41, 0.606);
+  background-blend-mode: overlay;
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+
+  color: var(--text-color-primary);
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 500;
+}
+
+.hero p {
+  font-size: 30px;
+}
+
+.hero input {
+  height: 70px;
+  width: 70vw;
+  border: none;
+  border-radius: 6px;
+  padding: 20px;
+
+  font-size: 18px;
+}
+
+.hero input:focus {
+  outline: none;
+}
+
+.city {
+  margin-top: 135px;
+}
+
+.city-name {
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 410px);
+  grid-template-rows: repeat(2, 553px);
+  gap: 30px;
+  justify-self: center;
+}
+
+.city-card {
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-color-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.city-card:hover {
+  background-color: rgba(74, 74, 74, 0.606);
+  background-blend-mode: overlay;
+}
+
+#city-card-1 {
+  background-image: url(./assets/bangluru.webp);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-2 {
+  background-image: url(./assets/goa.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-3 {
+  background-image: url(./assets/kolkata.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-4 {
+  background-image: url(./assets/singapore.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-5 {
+  background-image: url(./assets/malaysia.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-6 {
+  background-image: url(./assets/bangkok.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-7 {
+  background-image: url(./assets/newyork.webp);
+  background-size: cover;
+  background-position: center;
+}
+#city-card-8 {
+  background-image: url(./assets/paris.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+footer {
+  margin-top: 180px;
+  background-color: rgb(223, 223, 223);
+  color: var(--text-color-secondary);
+  height: 60px;
+  text-align: start;
+  align-content: center;
+  padding: 0 80px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "The NodeJS environment walkthrough",
+  "keywords": [
+    "NodeJS",
+    "JavaScript",
+    "fs",
+    "path",
+    "os",
+    "readline"
+  ],
+  "license": "Apache-2.0",
+  "author": "deephiwase",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

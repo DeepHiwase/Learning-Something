@@ -1,0 +1,72 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: url();
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  height: 80px;
+
+  background-color: black;
+  color: white;
+}
+
+h2 {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  width: 500px;
+}
+
+li {
+  list-style: none;
+
+  cursor: pointer;
+}
+
+li:hover {
+  border-bottom: 2px solid gold;
+}
+
+li:active {
+  border-bottom: 2px solid gold;
+  color: gold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  padding: 4px 8px;
+
+  background-color: gold;
+  color: black;
+  border-radius: 4px;
+  background: linear-gradient(rgb(255, 196, 0), gold);
+
+  cursor: pointer;
+}
+
+.ghost {
+  background-color: gray;
+}
